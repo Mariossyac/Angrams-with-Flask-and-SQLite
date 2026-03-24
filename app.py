@@ -7,12 +7,10 @@ import os
 
 app = Flask(__name__)
 
-# 1. Spunem Flask unde să găsească fișierul bazei de date (pe hard disk-ul tău)
 base_dir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:/proiect_anagrame/anagrams.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# 2. DEFINIM OBIECTUL db (Aici era problema ta!)
 db = SQLAlchemy(app)
 
 
